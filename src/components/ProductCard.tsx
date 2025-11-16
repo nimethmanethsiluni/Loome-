@@ -7,12 +7,17 @@ import productDress from "@/assets/product-dress.jpg";
 import productShirt from "@/assets/product-shirt.jpg";
 import productSarong from "@/assets/product-sarong.jpg";
 import productAccessories from "@/assets/product-accessories.jpg";
+import productSaree from "@/assets/product-saree.jpg";
+import productbatikshirt from "@/assets/product-batikshirt.jpg";
+
 
 const imageMap: Record<string, string> = {
   "product-dress.jpg": productDress,
   "product-shirt.jpg": productShirt,
   "product-sarong.jpg": productSarong,
   "product-accessories.jpg": productAccessories,
+  "product-saree.jpg": productSaree,
+  "product-batikshirt.jpg":productbatikshirt,
 };
 
 const ProductCard = ({ product }: { product: Product }) => {
