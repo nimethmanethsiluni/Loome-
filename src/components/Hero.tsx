@@ -16,7 +16,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-          Batik Bliss
+          Loomé
         </h1>
         <p className="text-2xl md:text-3xl text-primary-foreground mb-8 font-light">
           Handcrafted Batik, Made With Love

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Batik Bliss</h3>
+            <h3 className="text-xl font-bold mb-4">Loomé</h3>
             <p className="text-primary-foreground/90">
               Handcrafted Sri Lankan batik clothing, made with love and tradition. Each piece tells
               a story of cultural heritage and artisan craftsmanship.
@@ -74,7 +74,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-            <p className="text-primary-foreground/90">info@batikbliss.com</p>
+            <p className="text-primary-foreground/90">info@loomé.com</p>
             <p className="text-primary-foreground/90">+94 123 456 789</p>
           </div>
         </div>
