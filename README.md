@@ -21,7 +21,7 @@ Prerequisite: Node.js and npm installed.
 2. Install dependencies:
 
 3. Run dev server:
-4. 
+
 4. Open the URL shown in the terminal (usually `http://localhost:5173`).
 
 ## Scripts
