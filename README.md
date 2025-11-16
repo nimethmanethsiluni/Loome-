@@ -1,4 +1,4 @@
-# Lovable Project — Batik Bliss (React + Vite + TypeScript)
+# Loome (React + Vite + TypeScript)
 
 A small e-commerce starter built with React, TypeScript, Vite, Tailwind CSS and shadcn-ui. Includes a cart context, responsive navbar and simple product pages.
 
