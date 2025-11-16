@@ -3,6 +3,7 @@ import { ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo2.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,11 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-card shadow-soft border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">Batik Bliss</div>
-          </Link>
+            {/* Logo (image) */}
+            <Link to="/" className="flex items-center space-x-2">
+                <img src={logo} alt="Batik Bliss" className="h-20 w-auto" />
+                <span className="sr-only">Batik Bliss</span>
+            </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
