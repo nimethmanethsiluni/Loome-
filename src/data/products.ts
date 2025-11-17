@@ -60,7 +60,7 @@ export const products = [
     name: "Batik Scarf Collection",
     price: 29.99,
     category: "Accessories",
-    image: "product-accessories.jpg",
+    image: "batik-scarf.jpg",
     description: "Versatile batik scarves in various patterns"
   }
 ];
