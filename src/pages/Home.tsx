@@ -3,6 +3,8 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ReviewsSection from "@/components/ReviewsSection";
+
 
 const Home = () => {
   const featuredProducts = products.slice(0, 4);
@@ -54,7 +56,10 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* ⭐ Reviews Section */}
+      <ReviewsSection />
     </div>
+
   );
 };
 
