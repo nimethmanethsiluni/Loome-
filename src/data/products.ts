@@ -4,7 +4,7 @@ export const products = [
     name: "Traditional Batik Dress",
     price: 89.99,
     category: "Dresses",
-    image: "product-dress.jpg",
+    image: "product-dresses.jpg",
     description: "Elegant handcrafted batik dress with intricate maroon and brown patterns"
   },
   {
@@ -36,7 +36,7 @@ export const products = [
     name: "Premium Batik Top",
     price: 64.99,
     category: "Tops",
-    image: "product-dress.jpg",
+    image: "product-top.png",
     description: "Stylish batik top perfect for any occasion"
   },
   {
@@ -52,8 +52,13 @@ export const products = [
     name: "Premium Batik Saree",
     price: 99.99,
     category: "Dresses",
+<<<<<<< HEAD
     image: "product-saree.jpg",
     description: "Luxury batik saree for special occasions"
+=======
+    image: "",
+    description: "Luxury batik dress for special occasions"
+>>>>>>> 95fde3a6555998e8947f0a4dd26fcf60bf486d07
   },
   {
     id: 8,
