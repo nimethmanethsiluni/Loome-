@@ -52,13 +52,9 @@ export const products = [
     name: "Premium Batik Saree",
     price: 99.99,
     category: "Dresses",
-<<<<<<< HEAD
     image: "product-saree.jpg",
-    description: "Luxury batik saree for special occasions"
-=======
-    image: "",
-    description: "Luxury batik dress for special occasions"
->>>>>>> 95fde3a6555998e8947f0a4dd26fcf60bf486d07
+    description: "Luxury batik saree for special occasions",
+
   },
   {
     id: 8,

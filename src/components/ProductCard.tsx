@@ -7,26 +7,25 @@ import productDress from "@/assets/product-dresses.jpg";
 import productShirt from "@/assets/product-shirt.jpg";
 import productSarong from "@/assets/product-sarong.jpg";
 import productAccessories from "@/assets/product-accessories.jpg";
-<<<<<<< HEAD
+
 import productSaree from "@/assets/product-saree.jpg";
 import productbatikshirt from "@/assets/product-batikshirt.jpg";
 import productbatikscarf from "@/assets/batik-scarf.jpg";
-=======
 import productTop from "@/assets/product-top.png";
->>>>>>> 95fde3a6555998e8947f0a4dd26fcf60bf486d07
+
 
 const imageMap: Record<string, string> = {
   "product-dresses.jpg": productDress,
   "product-shirt.jpg": productShirt,
   "product-sarong.jpg": productSarong,
   "product-accessories.jpg": productAccessories,
-<<<<<<< HEAD
+
   "product-saree.jpg": productSaree,
   "product-batikshirt.jpg":productbatikshirt,
   "batik-scarf.jpg": productbatikscarf,
-=======
+
   "product-top.png": productTop,
->>>>>>> 95fde3a6555998e8947f0a4dd26fcf60bf486d07
+
 };
 
 const ProductCard = ({ product }: { product: Product }) => {
