@@ -13,7 +13,6 @@ import productbatikshirt from "@/assets/product-batikshirt.jpg";
 import productbatikscarf from "@/assets/batik-scarf.jpg";
 import productTop from "@/assets/product-top.png";
 
-
 const imageMap: Record<string, string> = {
   "product-dresses.jpg": productDress,
   "product-shirt.jpg": productShirt,
@@ -21,11 +20,10 @@ const imageMap: Record<string, string> = {
   "product-accessories.jpg": productAccessories,
 
   "product-saree.jpg": productSaree,
-  "product-batikshirt.jpg":productbatikshirt,
+  "product-batikshirt.jpg": productbatikshirt,
   "batik-scarf.jpg": productbatikscarf,
 
   "product-top.png": productTop,
-
 };
 
 const ProductCard = ({ product }: { product: Product }) => {
@@ -37,7 +35,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <Card className="group overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-scale-in bg-gradient-card">
+    <Card className="group overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-scale-in bg-gradient-card flex flex-col h-full">
       <div className="relative overflow-hidden">
         <img
           src={imageMap[product.image]}
@@ -46,7 +44,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex-grow">
         <div className="text-sm text-muted-foreground mb-2">{product.category}</div>
         <h3 className="text-xl font-semibold mb-2 text-foreground">{product.name}</h3>
         <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
