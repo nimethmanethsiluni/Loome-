@@ -48,7 +48,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <div className="text-sm text-muted-foreground mb-2">{product.category}</div>
         <h3 className="text-xl font-semibold mb-2 text-foreground">{product.name}</h3>
         <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
-        <div className="text-2xl font-bold text-primary">${product.price.toFixed(2)}</div>
+        <div className="text-2xl font-bold text-primary">LKR.{product.price.toFixed(2)}</div>
       </CardContent>
       <CardFooter className="p-6 pt-0">
         <Button
