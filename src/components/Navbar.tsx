@@ -1,14 +1,22 @@
-import { Link } from "react-router-dom";
-import { ShoppingCart, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ShoppingCart, Menu, X, Search } from "lucide-react";
+import { useEffect, useState, FormEvent } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo2.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { getCartCount } = useCart();
   const cartCount = getCartCount();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearchTerm(params.get("q") ?? "");
+  }, [location]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,70 +26,128 @@ const Navbar = () => {
     { name: "Custom Order", path: "/custom-order" },
   ];
 
-  return (
-    <nav className="sticky top-0 z-50 bg-card shadow-soft border-b border-border">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-            {/* Logo (image) */}
-            <Link to="/" className="flex items-center space-x-2">
-                <img src={logo} alt="Batik Bliss" className="h-20 w-auto" />
-                <span className="sr-only">Batik Bliss</span>
-            </Link>
+  const linkClasses = (path: string) =>
+    `text-sm font-bold tracking-wide transition-colors ${
+      location.pathname === path ? "text-[#7f0303]" : "text-muted-foreground hover:text-foreground"
+    }`;
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link to="/cart" className="relative">
-              <Button variant="outline" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
-                    {cartCount}
-                  </span>
-                )}
-              </Button>
-            </Link>
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const trimmed = searchTerm.trim();
+    const path = trimmed ? `/products?q=${encodeURIComponent(trimmed)}` : "/products";
+    navigate(path);
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
+  return (
+    <nav
+      style={{ fontFamily: "'Oswald', 'Inter', sans-serif" }}
+      className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#f4e5e0] shadow-[0_8px_30px_rgba(12,15,20,0.05)]"
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex h-20 items-center gap-6">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src={logo}
+              alt="Loome logo"
+              className="h-12 w-auto"
+            />
+            {/* <span className="text-xl font-extrabold tracking-wide text-[#1b1a1a]">Loome</span> */}
+          </Link>
+
+          <div className="hidden md:flex flex-1 items-center justify-between gap-6">
+            {/* Desktop Navigation */}
+            <div className="flex items-center space-x-10">
+              {navLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={linkClasses(link.path)}>
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Search */}
+            <form onSubmit={handleSearch} className="flex-1 max-w-sm">
+              <div className="flex items-center gap-3 rounded-full border border-[#f1ddd9] bg-white/80 px-4 py-2 shadow-inner focus-within:border-[#7f0303]">
+                <Search className="h-4 w-4 text-[#c08d7c]" />
+                <input
+                  type="search"
+                  placeholder="Search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full bg-transparent text-sm text-[#4b1f17] placeholder:text-[#c7a6a0] focus:outline-none"
+                />
+              </div>
+            </form>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          {/* Cart */}
+          <Link to="/cart" className="relative hidden md:inline-flex">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full bg-[#fdf1f0] text-[#7f0303] hover:bg-[#f9dbd7]"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-[#7f0303] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-semibold">
+                  {cartCount}
+                </span>
+              )}
+            </Button>
+          </Link>
+
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center space-x-3">
             <Link to="/cart" className="relative">
-              <Button variant="outline" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="rounded-full bg-[#fdf1f0] text-[#7f0303]">
                 <ShoppingCart className="h-5 w-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                  <span className="absolute -top-1 -right-1 bg-[#7f0303] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-semibold">
                     {cartCount}
                   </span>
                 )}
               </Button>
             </Link>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#f1ddd9] text-[#7f0303]"
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-slide-up">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="block text-foreground hover:text-primary transition-colors font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="md:hidden pb-6">
+            <div className="mt-4 rounded-2xl border border-[#f4e5e0] bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)] p-6 space-y-4 animate-slide-up">
+              <form onSubmit={handleSearch}>
+                <div className="flex items-center gap-3 rounded-full border border-[#f1ddd9] bg-white/80 px-4 py-2 shadow-inner focus-within:border-[#7f0303]">
+                  <Search className="h-4 w-4 text-[#c08d7c]" />
+                  <input
+                    type="search"
+                    placeholder="Search"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full bg-transparent text-sm text-[#4b1f17] placeholder:text-[#c7a6a0] focus:outline-none"
+                  />
+                </div>
+              </form>
+
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="block text-base font-bold text-[#1b1a1a]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>
