@@ -12,6 +12,8 @@ A small e-commerce starter built with React, TypeScript, Vite, Tailwind CSS and 
 - lucide-react (icons)
 - npm
 
+## Live - https://loome-sooty.vercel.app/
+
 ## Quick start
 
 Prerequisite: Node.js and npm installed.

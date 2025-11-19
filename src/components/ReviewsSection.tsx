@@ -4,17 +4,17 @@ import ReviewCard from "./ui/ReviewCard";
 const ReviewsSection = () => {
   const reviews = [
     {
-      name: "Tharushi",
+      name: "Chamith",
       review: "Absolutely beautiful batik designs! The quality is amazing.",
       rating: 5,
     },
     {
-      name: "Ishara",
+      name: "Yasith",
       review: "Fast delivery and lovely packaging. Will shop again!",
       rating: 5,
     },
     {
-      name: "Nadeesha",
+      name: "Najla",
       review: "Perfect for gifting. My family loved the batik pieces!",
       rating: 4,
     },
