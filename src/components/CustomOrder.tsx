@@ -11,7 +11,7 @@ const CustomOrder: React.FC = () => {
     <div className="min-h-screen bg-[#faf5f2] py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-sm uppercase tracking-[0.5em] text-[#b37c68] mb-2">Bespoke Service</p>
+          {/* <p className="text-sm uppercase tracking-[0.5em] text-[#b37c68] mb-2">Bespoke Service</p> */}
           <h1 className="text-4xl md:text-5xl font-bold text-[#4b1f17]" style={{ fontFamily: "'Oswald', 'Inter', sans-serif" }}>
             Create a Custom Order
           </h1>

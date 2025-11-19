@@ -111,6 +111,24 @@ const Home = () => {
           ))}
         </div>
       </section>
+        {/* About Preview Section */}
+      <section className="bg-gradient-subtle py-16 batik-pattern">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Our Story</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Loome brings you authentic Sri Lankan batik clothing, handcrafted by skilled
+              artisans using traditional techniques passed down through generations. Each piece is
+              unique, reflecting the rich cultural heritage of Sri Lanka.
+            </p>
+            <Link to="/about">
+              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                Learn More About Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
       <section>
         {/*Review Section*/}
         <ReviewsSection/>
