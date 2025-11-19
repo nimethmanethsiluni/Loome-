@@ -1,8 +1,5 @@
 import { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { useCart } from "@/contexts/CartContext";
-import { toast } from "sonner";
 import productDress from "@/assets/product-dresses.jpg";
 import productShirt from "@/assets/product-shirt.jpg";
 import productSarong from "@/assets/product-sarong.jpg";
@@ -26,40 +23,38 @@ const imageMap: Record<string, string> = {
   "product-top.png": productTop,
 };
 
-const ProductCard = ({ product }: { product: Product }) => {
-  const { addToCart } = useCart();
+const currencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 
-  const handleAddToCart = () => {
-    addToCart(product);
-    toast.success(`${product.name} added to cart!`);
-  };
-
-  return (
-    <Card className="group overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-scale-in bg-gradient-card flex flex-col h-full">
-      <div className="relative overflow-hidden">
-        <img
-          src={imageMap[product.image]}
-          alt={product.name}
-          className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+const ProductCard = ({ product, onAddToCart }: { product: Product; onAddToCart?: (product: Product) => void }) => (
+  <div className="group rounded-[32px] bg-white border border-[#f4e5e0] shadow-[0_25px_70px_rgba(15,23,42,0.06)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
+    <div className="relative h-80 overflow-hidden">
+      <img
+        src={imageMap[product.image]}
+        alt={product.name}
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+    <div className="p-6 space-y-4">
+      <div>
+        <h3 className="text-xl font-semibold text-[#2a1a17]">{product.name}</h3>
+        <p className="mt-1 text-sm text-[#8c6d64]">{product.category}</p>
+        <div className="mt-3 text-lg font-semibold text-[#4b1f17]">
+          {currencyFormatter.format(product.price)}
+        </div>
       </div>
-      <CardContent className="p-6 flex-grow">
-        <div className="text-sm text-muted-foreground mb-2">{product.category}</div>
-        <h3 className="text-xl font-semibold mb-2 text-foreground">{product.name}</h3>
-        <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
-        <div className="text-2xl font-bold text-primary">LKR.{product.price.toFixed(2)}</div>
-      </CardContent>
-      <CardFooter className="p-6 pt-0">
+      {onAddToCart && (
         <Button
-          onClick={handleAddToCart}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          onClick={() => onAddToCart(product)}
+          className="w-full rounded-2xl bg-[#7f0303] text-white hover:bg-[#5a0202] transition-colors"
         >
           Add to Cart
         </Button>
-      </CardFooter>
-    </Card>
-  );
-};
+      )}
+    </div>
+  </div>
+);
 
 export default ProductCard;

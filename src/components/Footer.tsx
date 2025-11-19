@@ -2,7 +2,10 @@ import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-hero text-primary-foreground mt-16">
+    <footer
+      style={{ fontFamily: "'Oswald', 'Inter', sans-serif" }}
+      className="bg-[#9d0000] text-primary-foreground mt-16"
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
