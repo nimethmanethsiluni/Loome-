@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -40,9 +40,21 @@
     --radius: 0.75rem;
 
     /* Batik Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0, 98%, 25%) 0%, hsl(23, 72%, 41%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(40 43% 93%) 0%, hsl(40 30% 88%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(40 43% 96%) 100%);
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(0, 98%, 25%) 0%,
+      hsl(23, 72%, 41%) 100%
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(40 43% 93%) 0%,
+      hsl(40 30% 88%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(40 43% 96%) 100%
+    );
 
     /* Shadows with batik warmth */
     --shadow-soft: 0 2px 8px hsl(30 42% 39% / 0.1);
@@ -62,10 +74,15 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold text-foreground;
   }
 }
@@ -73,14 +90,31 @@
 @layer components {
   /* Batik pattern background */
   .batik-pattern {
-    background-image: 
-      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(30 42% 39% / 0.03) 10px, hsl(30 42% 39% / 0.03) 20px),
-      repeating-linear-gradient(-45deg, transparent, transparent 10px, hsl(0 100% 25% / 0.02) 10px, hsl(0 100% 25% / 0.02) 20px);
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        hsl(30 42% 39% / 0.03) 10px,
+        hsl(30 42% 39% / 0.03) 20px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        hsl(0 100% 25% / 0.02) 10px,
+        hsl(0 100% 25% / 0.02) 20px
+      );
   }
 
   /* Batik border decoration */
   .batik-border {
-    border-image: linear-gradient(90deg, hsl(0 100% 25%), hsl(30 42% 39%), hsl(0 100% 25%)) 1;
+    border-image: linear-gradient(
+        90deg,
+        hsl(0 100% 25%),
+        hsl(30 42% 39%),
+        hsl(0 100% 25%)
+      )
+      1;
   }
 }
 

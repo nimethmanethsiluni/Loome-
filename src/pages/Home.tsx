@@ -46,10 +46,10 @@ const Home = () => {
           <img
             src={heroTexture}
             alt="Handcrafted batik fabric"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6b0202] via-[#7f0303] to-[#9b1c1c] opacity-95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.25)_1px,transparent_1px)] bg-[length:5px_5px] opacity-30" />
+          {/* <div className="absolute inset-0 bg-gradient-to-br from-[#6b0202] via-[#7f0303] to-[#9b1c1c] opacity-95" /> */}
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.25)_1px,transparent_1px)] bg-[length:5px_5px] opacity-30" /> */}
           <div className="relative px-8 py-16 md:px-16 md:py-24 max-w-3xl">
             <p className="text-sm uppercase tracking-[0.6em] text-white/80 mb-6">Loome</p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
