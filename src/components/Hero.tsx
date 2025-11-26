@@ -18,13 +18,13 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
           Loomé
         </h1>
-        <p className="text-2xl md:text-3xl text-primary-foreground mb-8 font-light">
+        {/* <p className="text-2xl md:text-3xl mb-8 font-light">
           Handcrafted Batik, Made With Love
-        </p>
-        <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+        </p> */}
+        {/* <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
           Discover the beauty of traditional Sri Lankan batik clothing. Each piece is a work of art,
           crafted with passion and centuries-old techniques.
-        </p>
+        </p> */}
         <Link to="/products">
           <Button
             size="lg"
@@ -36,7 +36,7 @@ const Hero = () => {
       </div>
 
       {/* Decorative Pattern Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-background" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-background" /> */}
     </section>
   );
 };

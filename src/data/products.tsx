@@ -5,7 +5,7 @@ export const products = [
     price: 7990.00,
     category: "Dresses",
     image: "product-dresses.jpg",
-    description: "Elegant handcrafted batik dress with intricate maroon and brown patterns"
+    description: "Elegant handcrafted batik dress with intricate maroon and brown patterns",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const products = [
     price: 6490.00,
     category: "Shirts",
     image: "product-batikshirt.jpg",
-    description: "Comfortable batik shirt with traditional navy and brown floral designs"
+    description: "Comfortable batik shirt with traditional navy and brown floral designs",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const products = [
     price: 5490.00,
     category: "Sarongs",
     image: "product-sarong.jpg",
-    description: "Beautiful batik sarong with elegant maroon floral patterns"
+    description: "Beautiful batik sarong with elegant maroon floral patterns",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const products = [
     price: 4200.00,
     category: "Accessories",
     image: "product-accessories.jpg",
-    description: "Premium batik scarf and headband with traditional patterns"
+    description: "Premium batik scarf and headband with traditional patterns",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const products = [
     price: 7890.00,
     category: "Tops",
     image: "product-top.png",
-    description: "Stylish batik top perfect for any occasion"
+    description: "Stylish batik top perfect for any occasion",
   },
   {
     id: 6,
@@ -45,24 +45,23 @@ export const products = [
     price: 8450.00,
     category: "Shirts",
     image: "product-shirt.jpg",
-    description: "Classic batik shirt with timeless patterns"
+    description: "Classic batik shirt with timeless patterns",
   },
-  {
-    id: 7,
-    name: "Premium Batik Saree",
-    price: 34900.00,
-    category: "Dresses",
-    image: "product-saree.jpg",
-    description: "Luxury batik saree for special occasions",
-
-  },
+{
+  id: 7,
+  name: "Premium Batik Saree",
+  price: 34900.00,
+  category: "Dresses",
+  image: "product-saree.jpg",
+  description: "Luxury batik saree for special occasions",
+},
   {
     id: 8,
     name: "Batik Scarf Collection",
     price: 2700.00,
     category: "Accessories",
     image: "batik-scarf.jpg",
-    description: "Versatile batik scarves in various patterns"
+    description: "Versatile batik scarves in various patterns",
   }
 ];
 
