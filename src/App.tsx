@@ -15,7 +15,7 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import CustomOrder from './components/CustomOrder'; 
 import Artisans from './pages/Artisans';
-import CustomOrder from './components/CustomOrder';
+// import CustomOrder from './components/CustomOrder';
 import Login from "./pages/Login";
 import ArtisanDashboard from "./pages/ArtisanDashboard";
 
